@@ -1,6 +1,9 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is deployed [here](https://geekle.netlify.app/).
+This project repo is located [here](https://github.com/drewamunat2/geekle-app).
+[GalaxyconLLC.](https://galaxycon.com/).
 
 ## Available Scripts
 

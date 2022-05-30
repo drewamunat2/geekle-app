@@ -1,5 +1,14 @@
-function App() {
-  return <div>Hello React!</div>;
+import React, { Component } from "react";
+
+class App extends Component {
+
+  render() {
+    return (
+      <Container>
+        <DisplayGame/>
+      </Container>
+    );
+  }
 }
 
 export default App;
