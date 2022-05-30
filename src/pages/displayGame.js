@@ -12,7 +12,7 @@ const styles = {
   }
 };
 
-function DisplayGame(props) {
+function DisplayGame() {
   return (
     <>
       <Search/>

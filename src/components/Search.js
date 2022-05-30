@@ -8,8 +8,8 @@ function Search(props) {
   return (
     <SearchBar 
       value={query} 
-      onChange={(newValue) => updateQuery(newValue)}
-      onCancelSearch={() => updateQuery("")} 
+      //onChange={(newValue) => updateQuery(newValue)}
+      //onCancelSearch={() => updateQuery("")} 
     />
   );
 }
