@@ -1,0 +1,134 @@
+{
+  "characters": [
+    {
+      "name": "Superman",
+      "gender": "male",
+      "show": "superman",
+      "genre": "superhero",
+      "platform": "DC Comics",
+      "role": "main protagonist/title character",
+      "year": 1933,
+      "id": 1
+    },
+    {
+      "name": "Batman",
+      "gender": "male",
+      "show": "batman",
+      "genre": "superhero",
+      "platform": "DC Comics",
+      "role": "main protagonist/title character",
+      "year": 1939,
+      "id": 2
+    },
+    {
+      "name": "Darth Vader",
+      "gender": "male",
+      "show": "Star Wars",
+      "genre": "sci-fi",
+      "platform": "movies",
+      "role": "main antagonist",
+      "year": 1983,
+      "id": 3
+    },
+    {
+      "name": "Bubbles",
+      "gender": "female",
+      "show": "The Powerpuff Girls",
+      "genre": "cartoon",
+      "platform": "tv",
+      "role": "deutertagonist",
+      "year": 1998,
+      "id": 4
+    },
+    {
+      "name": "Harry Potter",
+      "gender": "male",
+      "show": "Harry Potter",
+      "genre": "fantasy",
+      "platform": "movies",
+      "role": "main protagonist/title character",
+      "year": 2001,
+      "id": 5
+    },
+    {
+      "name": "Captain Kirk",
+      "gender": "male",
+      "show": "Star Trek",
+      "genre": "sci-fi",
+      "platform": "tv",
+      "role": "main protagonist",
+      "year": 1966,
+      "id": 6
+    },
+    {
+      "name": "Zelda",
+      "gender": "female",
+      "show": "The Legend of Zelda",
+      "genre": "fantasy",
+      "platform": "Nintendo",
+      "role": "main protagonist/title character",
+      "year": 1986,
+      "id": 7
+    },
+    {
+      "name": "Skeletor",
+      "gender": "male",
+      "show": "the Masters of the Universe/He-man",
+      "genre": "fantasy",
+      "platform": "cartoon",
+      "role": "main antagonist",
+      "year": 1981,
+      "id": 8
+    },
+    {
+      "name": "Mario",
+      "gender": "male",
+      "show": "Super Mario",
+      "genre": "fantasy",
+      "platform": "Nintendo",
+      "role": "main protagonist/title character",
+      "year": 1983,
+      "id": 9
+    },
+    {
+      "name": "Rick O’Connell",
+      "gender": "male",
+      "show": "The Mummy",
+      "genre": "action adventure",
+      "platform": "movie",
+      "role": "main protagonist",
+      "year": 1999,
+      "id": 10
+    },
+    {
+      "name": "Gill-man",
+      "gender": "male",
+      "show": "the Black Lagoon",
+      "genre": "horror",
+      "platform": "movie",
+      "role": "main antagonist",
+      "year": 1954,
+      "id": 11
+    },
+    {
+      "name": "Frank N. Furter",
+      "gender": "male",
+      "show": "The Rocky Horror Show",
+      "genre": "horror",
+      "platform": "movie",
+      "role": "main antagonist",
+      "year": 1973,
+      "id": 12
+    },
+    {
+      "name": "Deku",
+      "gender": "male",
+      "show": "My Hero Academia",
+      "genre": "anime",
+      "platform": "tv",
+      "role": "main protagonist",
+      "year": 2014,
+      "id": 13
+    }
+  ]
+}

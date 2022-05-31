@@ -1,17 +1,59 @@
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Autocomplete from '@mui/material/Autocomplete';
-import SearchBar from "material-ui-search-bar";
+import React, { Component } from "react";
+import axios from "axios";
 
-function Search(props) {
-  const { query, updateQuery } = props;
-  return (
-    <SearchBar 
-      value={query} 
-      //onChange={(newValue) => updateQuery(newValue)}
-      //onCancelSearch={() => updateQuery("")} 
-    />
-  );
+class Search extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      word: "hello"
+    }
+  }
+
+  render() {
+    return (
+      <section className="section">
+        <div className="field has-addons">
+          <div className="control is-expanded">
+            <input
+              className="input is-large is-fullwidth"
+              id="define-input"
+              placeholder="Enter a word"
+              type="text"
+              value={this.state.word}
+              onChange={this.changeWord}
+            />
+          </div>
+          <div className="control">
+            <button 
+              className="button is-info is-large" 
+              id="define-btn"
+              onClick={this.fetchDefinitions}
+            >
+              Define
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  changeWord = (event) => {
+    this.setState({word: event.target.value});
+  }
+  
+  fetchDefinitions = async (event) => {
+    event.preventDefault();
+    const dictionaryAPI = "https://api.dictionaryapi.dev/api/v2/entries/en_US/";
+    const wordToDefine = this.state.word;
+    try {
+      const response = await axios.get(`${dictionaryAPI}${wordToDefine}`);
+      const data = response.data;
+      console.log(data[0]);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 }
 
 export default Search;
