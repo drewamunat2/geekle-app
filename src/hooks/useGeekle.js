@@ -43,6 +43,15 @@ const useGeekle = (solution) => {
       });
   };
 
+  const isYellow = (guessedTrait, closeArray) => {
+    for (let l of closeArray) {
+      if (l === guessedTrait) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 
   //format a guess into a name and an array of string objects "characteristics"
   //e.g. name: "Superman" characteristics: [{gender: "male", color: "green"}...]
@@ -64,6 +73,8 @@ const useGeekle = (solution) => {
     //same gender : set green
     if(guessedCharacter.gender === solution.gender) {
       charMap.set('gender', 'green');
+    } else if(guessedCharacter.species === solution.species) {
+      charMap.set('gender', 'yellow');
     }
 
     //set show color
@@ -71,6 +82,8 @@ const useGeekle = (solution) => {
     //same show : set green
     if(guessedCharacter.show === solution.show) {
       charMap.set('show', 'green');
+    } else if (isYellow(guessedCharacter.show, solution.allShows)) {
+      charMap.set('role', 'yellow');
     }
 
     //set genre color
@@ -78,6 +91,8 @@ const useGeekle = (solution) => {
     //same genre : set green
     if(guessedCharacter.genre === solution.genre) {
       charMap.set('genre', 'green');
+    } else if (isYellow(guessedCharacter.genre, solution.allGenres)) {
+      charMap.set('role', 'yellow');
     }
 
     //set platform color
@@ -85,6 +100,8 @@ const useGeekle = (solution) => {
     //same platform : set green
     if(guessedCharacter.platform === solution.platform) {
       charMap.set('platform', 'green');
+    } else if (isYellow(guessedCharacter.platform, solution.allPlatforms)) {
+      charMap.set('role', 'yellow');
     }
 
     //set role color
@@ -92,6 +109,8 @@ const useGeekle = (solution) => {
     //same show : set green
     if(guessedCharacter.role === solution.role) {
       charMap.set('role', 'green');
+    } else if (guessedCharacter.genRole === solution.genRole) {
+      charMap.set('role', 'yellow');
     }
 
     //set year color
@@ -99,7 +118,7 @@ const useGeekle = (solution) => {
     //same year : set green
     if(guessedCharacter.year === solution.year) {
       charMap.set('year', 'green');
-    } else if(Math.floor(guessedCharacter.year / 10) === Math.floor(solution.year / 10)) {
+    } else if(guessedCharacter.decade === solution.decade) {
       charMap.set('year', 'yellow');
     }
 
