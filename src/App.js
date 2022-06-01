@@ -16,10 +16,10 @@ function App() {
       .then(res => res.json())
       .then(json => {
         // randomly generate int 0-12
-        const randomCharacter = json[Math.floor(Math.random() * json.length)]
-        setSolution(randomCharacter.name)
-      })
-  },[setSolution])
+        const randomCharacter = json[Math.floor(Math.random() * json.length)];
+        setSolution(randomCharacter);
+      });
+  },[setSolution]);
 
   return (
     <div className="App">
