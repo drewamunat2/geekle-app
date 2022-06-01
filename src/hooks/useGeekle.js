@@ -17,7 +17,6 @@ const useGeekle = (solution) => {
     "platform": "grey",
     "role": "grey",
     "year": "grey",
-    //"guessedCharacter": guessedCharacter
   }); //empty characteristic object
 
   /*const fetchCharacter = async () => {
@@ -40,6 +39,7 @@ const useGeekle = (solution) => {
         // randomly generate int 0-12
         console.log(json[0]);
         setGuessedCharacter(json[0]);
+        return;
       });
   };
 
@@ -59,7 +59,6 @@ const useGeekle = (solution) => {
 
     //fetch guessed character from API
     fetchCharacter();
-    console.log(guessedCharacter);
     const charMap = new Map();
     charMap.set('gender', 'grey');
     charMap.set('genre', 'grey');
@@ -122,16 +121,16 @@ const useGeekle = (solution) => {
       charMap.set('year', 'yellow');
     }
 
-    console.log(guessedCharacteristicColors);
-    setGuessedCharacteristicColors((charMap) => {
+    //set format
+    setGuessedCharacteristicColors(() => {
       let newGuessedCharacteristicColors = {
-        "name": charMap.get("name"),
-        "gender": charMap.get("gender"),
-        "show": charMap.get("show"),
-        "genre": charMap.get("genre"),
-        "platform": charMap.get("platform"),
-        "role": charMap.get("role"),
-        "year": charMap.get("year"),
+        "name": charMap.get('name'),
+        "gender": charMap.get('gender'),
+        "show": charMap.get('show'),
+        "genre": charMap.get('genre'),
+        "platform": charMap.get('platform'),
+        "role": charMap.get('role'),
+        "year": charMap.get('year'),
       };
       return newGuessedCharacteristicColors;
     });
@@ -141,9 +140,9 @@ const useGeekle = (solution) => {
   //update the isCorrect state if the guess is correct
   //add one to the turn state
   const addNewGuess = () => {
-    console.log(solution);
     if (guessedCharacter.name === solution.name) {
       setIsCorrect(true);
+      console.log("same!");
     }
     setGuesses(prevGuesses => {
       let newGuesses = [...prevGuesses];
@@ -157,6 +156,21 @@ const useGeekle = (solution) => {
       return prevTurn + 1;
     });
     setCurrentGuess('');
+    console.log("solution character: ", solution);
+    console.log("guessed character: ", guessedCharacter);
+    setGuessedCharacter({});
+    console.log("guessed character's colors: ", guessedCharacteristicColors);
+    setGuessedCharacteristicColors({
+      "name": "grey",
+      "gender": "grey",
+      "show": "grey",
+      "genre": "grey",
+      "platform": "grey",
+      "role": "grey",
+      "year": "grey",
+    });
+    console.log("after reset guessed character's colors: ", guessedCharacteristicColors);
+    console.log("after reset guessed character: ", guessedCharacter);
   };
 
   //handle a key up event and track current guess
@@ -173,6 +187,7 @@ const useGeekle = (solution) => {
       }
       formatGuess();
       addNewGuess();
+      setCurrentGuess('');
       //only add guess if turn is < 8
       //don't allow duplicate words
       //must be a character from the api
@@ -182,7 +197,7 @@ const useGeekle = (solution) => {
         return prev.slice(0, -1);
       });
       return;
-    }
+    } 
     if(/^[A-Za-z]$/.test(key)) {
       setCurrentGuess((prev) => {
         return prev + key;
